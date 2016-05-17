@@ -60,7 +60,7 @@ $(function() {
     * hiding/showing of the menu element.
     */
     it('is hidden by default', function() {
-      expect($('body').hasClass('menu-hidden')).toBeTruthy();
+      expect($("body").hasClass("menu-hidden")).toBeTruthy();
     });
 
     /* Test that ensures the menu changes
@@ -69,10 +69,10 @@ $(function() {
     * clicked and does it hide when clicked again.
     */
     it('icon responds correctly to click', function() {
-      $('.menu-icon-link').trigger('click');
-      expect($('body').hasClass('menu-hidden')).toBeFalsy();
-      $('.menu-icon-link').trigger('click');
-      expect($('body').hasClass('menu-hidden')).toBeTruthy();
+      $(".menu-icon-link").trigger("click");
+      expect($("body").hasClass("menu-hidden")).toBeFalsy();
+      $(".menu-icon-link").trigger("click");
+      expect($("body").hasClass("menu-hidden")).toBeTruthy();
     });
   });
 
@@ -93,18 +93,37 @@ $(function() {
     });
 
     it('at least one entry exists', function() {
-      console.log($(".feed").find(".entry"));
-      expect($('.feed')).toBeDefined();
-      expect($('.feed').find(".entry").length).not.toBe(0);
+      expect($(".feed")).toBeDefined();
+      expect($(".feed").find(".entry").length).not.toBe(0);
+      // console.log("Zero: " + $('.feed').find(".entry").first().text());
+    });
+  });
+
+  /* Test suite named "New Feed Selection" */
+  describe('New Feed Selection', function(done) {
+    var firstEntry;
+
+    beforeEach(function(done) {
+      loadFeed(1, function() {
+        firstEntry = $(".feed").find(".entry").first().text();
+        done();
+      });
+    });
+
+    /* Test that ensures when a new feed is loaded
+    * by the loadFeed function that the content actually changes.
+    * Remember, loadFeed() is asynchronous.
+    */
+    it('loads new entry', function(done) {
+      loadFeed(0, function() {
+        // console.log("One: " + firstEntry);
+        // console.log("Zero: " + $('.feed').find(".entry").first().text());
+        expect($(".feed")).toBeDefined();
+        expect($(".feed").find(".entry").first().text()).not.toEqual(firstEntry);
+        done();
+      });
     });
 
   });
 
-
-  /* TODO: Write a new test suite named "New Feed Selection"
-
-      /* TODO: Write a test that ensures when a new feed is loaded
-       * by the loadFeed function that the content actually changes.
-       * Remember, loadFeed() is asynchronous.
-       */
 }());
