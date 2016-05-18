@@ -10,7 +10,7 @@ This application was developed by [Udacity](http://udacity.com) and provided as 
 
 ### Scripts
 
-**js/app.js** - Main feed reader application. Makes use of [jQuery](http://jquery.com), [handlebars](http://handlebarsjs.com/) and the **Udacity RSStoJSON Feed Reader** API to present a list of feeds that the user can select from.
+**js/app.js** - Main feed reader application. Makes use of [jQuery](http://jquery.com), [handlebars](http://handlebarsjs.com/) and the **Udacity RSStoJSON Feed Reader** API to present a list of feeds that the user can select from.<br>
 **jasmine/spec/feedreader.js** - A set of test suites written using [Jasmine](http://jasmine.github.io/). The tests are run when the page is loaded and the results are presented at the bottom of the displayed page.
 
 ### Libraries
