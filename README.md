@@ -19,10 +19,10 @@ This project is an exercise in using [Jasmine](http://jasmine.github.io/) to tes
 
 ### APIs
 
-**Google JS API**
+**Udacity RSStoJSON Feed Reader**
 
 ## Installation
 
 This is a single-page web application. Copying the contents of the project directory to a web server will complete installation.
 
-The active site can be viewed [here](http://)
+The active site can be viewed [here](http://ritchmct.github.io/frontend-nanodegree-feedreader/)
