@@ -6,20 +6,22 @@ This project is an exercise in using [Jasmine](http://jasmine.github.io/) to tes
 
 ## Implementation
 
+This application was developed by [Udacity](http://udacity.com) and provided as an exercise in the Frontend Web Development course. The objective is to extend the test suites provided in **jasmine/spec/feedreader.js** to more comprehensively test the functionality of the feed reader application.
+
 ### Scripts
 
-**js/app.js** - <br>
-**jasmine/spec/feedreader.js** -
+**js/app.js** - Main feed reader application. Makes use of [jQuery](http://jquery.com), [handlebars](http://handlebarsjs.com/) and the **Udacity RSStoJSON Feed Reader** API to present a list of feeds that the user can select from.
+**jasmine/spec/feedreader.js** - A set of test suites written using [Jasmine](http://jasmine.github.io/). The tests are run when the page is loaded and the results are presented at the bottom of the displayed page.
 
 ### Libraries
 
-**[Jasmine](http://jasmine.github.io/) 2.1.2** - <br>
-**[jQuery](http://jquery.com) 2.1.1** - <br>
-**[handlebars](http://handlebarsjs.com/) 2.0.0** -
+**[Jasmine](http://jasmine.github.io/) 2.1.2** - Behavior-driven development framework for testing JavaScript code.<br>
+**[jQuery](http://jquery.com) 2.1.1** - Fast, small and feature-rich JavaScript library used to make DOM manipulation and AJAX easier.<br>
+**[handlebars](http://handlebarsjs.com/) 2.0.0** - Provides easy HTML semantic template functionality.
 
 ### APIs
 
-**Udacity RSStoJSON Feed Reader**
+**Udacity RSStoJSON Feed Reader** - This replaces the deprecated Google Feed Reader API that was used in the initial development of the app by Udacity.
 
 ## Installation
 
