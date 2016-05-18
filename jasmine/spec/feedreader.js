@@ -23,7 +23,7 @@ $(function() {
      */
     it('are defined', function() {
       expect(allFeeds).toBeDefined();
-      expect(allFeeds.length).not.toBe(0);
+      expect(allFeeds.length).toBeGreaterThan(0);
     });
 
     /* Test that loops through each feed
@@ -34,7 +34,7 @@ $(function() {
     it('URLs are defined and not empty', function() {
       allFeeds.forEach( function (entry) {
         expect(entry.url).toBeDefined();
-        expect(entry.url.length).not.toBe(0);
+        expect(entry.url.length).toBeGreaterThan(0);
       });
     });
 
@@ -46,7 +46,7 @@ $(function() {
     it('names are defined and not empty', function() {
       allFeeds.forEach( function (entry) {
         expect(entry.name).toBeDefined();
-        expect(entry.name.length).not.toBe(0);
+        expect(entry.name.length).toBeGreaterThan(0);
       });
     });
   });
@@ -87,15 +87,13 @@ $(function() {
     * the use of Jasmine's beforeEach and asynchronous done() function.
     */
     beforeEach(function(done) {
-      loadFeed(0, function() {
-        done();
-      });
+      loadFeed(0, done);
     });
 
     it('at least one entry exists', function() {
       expect($(".feed")).toBeDefined();
-      expect($(".feed").find(".entry").length).not.toBe(0);
-      // console.log("Zero: " + $('.feed').find(".entry").first().text());
+      expect($(".feed .entry").length).toBeGreaterThan(0);
+      // console.log("Zero: " + $(".feed .entry").first().text());
     });
   });
 
@@ -105,7 +103,7 @@ $(function() {
 
     beforeEach(function(done) {
       loadFeed(1, function() {
-        firstEntry = $(".feed").find(".entry").first().text();
+        firstEntry = $(".feed .entry").first().text();
         done();
       });
     });
@@ -119,7 +117,7 @@ $(function() {
         // console.log("One: " + firstEntry);
         // console.log("Zero: " + $('.feed').find(".entry").first().text());
         expect($(".feed")).toBeDefined();
-        expect($(".feed").find(".entry").first().text()).not.toEqual(firstEntry);
+        expect($(".feed .entry").first().text()).not.toEqual(firstEntry);
         done();
       });
     });
