@@ -25,6 +25,6 @@ This application was developed by [Udacity](http://udacity.com) and provided as 
 
 ## Installation
 
-This is a single-page web application. Copying the contents of the project directory to a web server will complete installation.
+This is a single-page web application. Copying the contents of the project directory to a web server will complete installation. Alternatively the project directory can be copied to a computer and the application viewed by opening the `index.html` file in a web browser.
 
 The active site can be viewed [here](http://ritchmct.github.io/frontend-nanodegree-feedreader/)
